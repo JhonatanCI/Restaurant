@@ -16,9 +16,10 @@ class RecipeTest {
 	
 	public void setupStage2() {
 		 recipeWithIng = new Recipe();
-		 recipeWithIng.addIngredient(names[0],weights[0]);
-		 recipeWithIng.addIngredient(names[1],weights[1]);
-		 recipeWithIng.addIngredient(names[2],weights[2]);
+		 for (int i = 0; i<3;i++ ) {
+			 recipeWithIng.addIngredient(names[i],weights[i]);
+		}
+		 
 		 
 	}
 

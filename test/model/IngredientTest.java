@@ -23,17 +23,21 @@ class IngredientTest {
 		assertEquals(299,ing1.getWeight());
 		
 	}
-
 	
 	@Test
 	void test2() throws NegativeNumberException{
 		setupStage1();
 		add = -100;
-		if (add<0) {
-			throw new NegativeNumberException(add);
-		}else {
-			ing1.addWeight(add);
+		try {
+			if (add<0) {
+				throw new NegativeNumberException(add);
+			}else {
+				ing1.addWeight(add);
+			}
+		}catch(NegativeNumberException ex) {
+			ex.printStackTrace();
 		}
+		
 		assertEquals(245,ing1.getWeight());
 	}
 	
@@ -49,10 +53,14 @@ class IngredientTest {
 	void test4() throws NegativeNumberException{
 		setupStage1();
 		add = -100;
-		if (add<0) {
-			throw new NegativeNumberException(add);
-		}else {
-			ing1.removeWeight(add);
+		try {
+			if (add<0) {
+				throw new NegativeNumberException(add);
+			}else {
+				ing1.removeWeight(add);
+			}
+		}catch(NegativeNumberException ex) {
+			ex.printStackTrace();
 		}
 		assertEquals(245,ing1.getWeight());
 		
